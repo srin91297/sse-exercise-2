@@ -50,7 +50,7 @@ class Progress(RemoteProgress):
 #cloning repos
 for i in repo_details:
     print(color.BOLD + i[1] + color.END)
-    #Repo.clone_from(i[0], i[1], progress=Progress())
+    Repo.clone_from(i[0], i[1], progress=Progress())
     repo = Repo(i[1])
     data = repo.git.show("-s", i[2]).splitlines()
     # a. What was the message and title of the fixing commit? Was there any mention of fixing a bug or vulnerability? Hint: git diff or git show
